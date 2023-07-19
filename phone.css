@@ -1,0 +1,218 @@
+body {
+    width: 100vw;
+}
+
+.logo {
+    bottom: 0px;
+    right: 12px;
+}
+
+#top-section>h1 {
+    font-size: 10vw;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 10vw;
+}
+
+li {
+    font-size: 1rem;
+}
+
+button {
+    font-size: 0.65rem;
+}
+
+#top-section .sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btns {
+    margin: 0vw 0vw;
+}
+
+.candidates {
+    margin: 5vw 0vw;
+}
+
+/* Form section */
+#candidate-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#candidate-form form .upper-form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-left-section {
+    max-width: 21rem;
+}
+
+.form-right-section {
+    max-width: 21rem;
+}
+
+
+.lower-form {
+    max-width: 21rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.singleVal {
+    display: block;
+}
+
+.multipleInput {
+    width: 20rem;
+}
+
+
+/* Choosing template section */
+.resume ul {
+    max-width: 21rem;
+    margin: 6vw auto;
+}
+
+
+/* Final resume section */
+.resume-template {
+    margin: 2rem auto;
+    width: 22rem;
+    height: 31.11rem;
+}
+
+/* Temp1 */
+.left-box {
+    widtH: 33%;
+}
+
+.left-box .section-stuff {
+    word-wrap: break-word;
+}
+
+.left-box .section-heading,
+.right-box .section-heading {
+    font-size: 1rem;
+}
+
+.left-box .section-stuff {
+    font-size: 0.65rem;
+}
+
+.right-box .heading-name {
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.right-box .template-designation {
+    font-size: 0.8rem;
+}
+
+.right-box p,
+.right-box .section-stuff {
+    font-size: 0.7rem;
+    padding: 0 0.5rem;
+}
+
+.right-box .section-heading,
+.right-box p,
+.right-box .template-designation,
+.right-box .heading-name,
+.left-box .section-heading,
+.left-box .section-stuff {
+    padding: 0.5rem;
+}
+
+
+/* Temp2 */
+.custom-shape-divider-top-1686457299 svg {
+    height: 102px;
+}
+
+.temp2-header h1 {
+    font-size: 1rem;
+    right: 4px;
+}
+
+.temp2-header h3 {
+    font-size: 0.75rem;
+    top: -13px;
+    right: 5px;
+}
+
+.temp2-person-image {
+    width: 75px;
+    height: 75px;
+}
+
+.temp2-person-image img {
+    width: 65px;
+    height: 65px;
+}
+
+#temp2-left-box {
+    padding-top: 5rem;
+}
+
+#temp2-right-box {
+    padding-top: 6rem;
+}
+
+.temp2-content .section-heading {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.temp2-content .section-stuff ul li,
+.temp2-content .section-stuff {
+    font-size: 0.7rem;
+}
+
+
+/* Temp3 */
+.temp3-template .header h1 {
+    font-size: 1.75rem;
+}
+
+.temp3-template .header h3 {
+    font-size: 1rem;
+    margin-top: 1vw;
+}
+
+.temp3-template .section-heading {
+    font-size: 0.8rem;
+}
+
+.temp3-template #obj-heading {
+    margin-top: 4rem;
+}
+
+.temp3-template .section-stuff,
+.temp3-template .section-stuff ul li {
+    font-size: 0.7rem;
+}
+
+.temp3-template .contact-section {
+    font-size: 0.65rem;
+    top: 2rem
+}
+
+.temp3-content #skills-section {
+    padding-right: 3rem;
+}
+
+.temp3-template #sep2 {
+    margin-top: 1rem;
+}

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="icon" type="image/x-icon" href="./static/favicon.png">
+
+    <!-- My style sheet -->
+    <link rel="stylesheet" href="style.css" class="css">
+
+    <!-- Mobile Style Sheet -->
+    <link rel="stylesheet" href="phone.css" media="screen and (max-width:915px)">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Josefin+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- My JS -->
+    <script type="module" src="index.js"></script>
+
+    <!-- Handlesbars -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div id="main-container">
+        <div id="top-section">
+            <h1 class="scale-in-top">Resume Builder</h1>
+            <div class="sub-container fade-in">
+                <h3>Choose a candidate: </h3>
+                <div class="candidates">
+                    <ul id="candidates-list">
+                        <!-- To be fulfilled using handlebars -->
+                    </ul>
+                    <div class="my-warning" id="noCandyChosen">Please choose a candidate.</div>
+                </div>
+
+                <div id="btns">
+                    <button id="resumeBtn">Get Resume</button>
+                    <button id="candidateBtn">Add Candidate</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-container">
+
+
+            <div id="download-resume" class="unactive fade-in">
+
+                <h3>Choose a template</h3>
+                <div class="resume">
+                    <ul>
+                        <li>
+                            <input type="radio" id="resumeTemp1" name="templateBtns" value="temp1">
+                            <label for="resumeTemp1">
+                                Template 1
+                                <img class="prev-img" src="./static/temp1.webp" alt="">
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="resumeTemp2" name="templateBtns" value="temp2">
+                            <label for="resumeTemp2">
+                                Template 2
+                                <img class="prev-img" src="./static/temp2.webp" alt="">
+                            </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="resumeTemp3" name="templateBtns" value="temp3">
+                            <label for="resumeTemp3">
+                                Template 3
+                                <img class="prev-img" src="./static/temp3.webp" alt="">
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-template fade-in" id="finalResume">
+                <!-- To be fulfilled using handlebars -->
+            </div>
+            <button id="getPDF">Print</button>
+
+
+            <div id="candidate-form" class="candidate-form unactive fade-in">
+                <h3>New Candidate Registration</h3>
+                <form>
+                    <div class="upper-form">
+                        <div class="form-left-section">
+                            <div class="singleVal">
+                                <label for="name">Name:</label>
+                                <input id="name" type="text" name="name" autocomplete="on">
+                            </div>
+                            <div class="singleVal">
+                                <label for="qualification">Qualification:</label>
+                                <input id="qualification" type="text" name="qualification">
+                            </div>
+                            <div class="singleVal">
+                                <label for="address">Address:</label>
+                                <input id="address" type="text" name="address" autocomplete="on">
+                            </div>
+                            <div class="singleVal">
+                                <label for="email">Email:</label>
+                                <input id="email" type="email" name="email" autocomplete="on">
+                            </div>
+                            <div class="singleVal">
+                                <label for="intro">Short Introduction:</label>
+                                <input id="intro" type="text" name="intro" style="width: 18rem; height: 4rem;">
+                            </div>
+                        </div>
+                        <div class="form-right-section">
+                            <div class="singleVal">
+                                <label for="age">Age:</label>
+                                <input id="age" type="number" name="age">
+                            </div>
+                            <div class="singleVal">
+                                <label for="designation">Designation to apply for:</label>
+                                <input id="designation" type="text" name="designation">
+                            </div>
+                            <div class="singleVal">
+                                <label for="phone">Ph. No.:</label>
+                                <input id="phone" type="tel" name="phone" autocomplete="on">
+                            </div>
+                            <div class="singleVal">
+                                <label for="linkedin">LinkedIn (url):</label>
+                                <input id="linkedin" type="url" name="linkedin">
+                            </div>
+                            <div class="singleVal">
+                                <label for="objective">Objective:</label>
+                                <input id="objective" type="text" name="objective" style="width: 18rem; height: 4rem;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lower-form">
+
+                        <div class="multipleVals" id="skills">
+                            <label for="skill0">Skills:</label>
+                            <div><input type="text" id="skill0" class="multipleInput skills-input" name="skill0"></div>
+                            <button id="newSkill" class="skillAddBtn">Add skill</button>
+                        </div>
+
+                        <!-- Achievements, Education and experience section to be inserted using handlebars -->
+
+                        <button id="newCandySub">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+        <a class="logo" href="https://aryn-rjpt.github.io/MyPortfolio">
+            <img src="./static//my_logo.png" alt="">
+        </a>
+    </div>
+
+    <!-- candidates-list template -->
+    <script id="candidates-list-template" type="text/x-handlebars-template">
+
+        {{#each candidates}}
+        <li>
+            <input type="radio" id="candy{{id}}" name="chosen-one" value="{{id}}">
+            <label for="candy{{id}}">{{name}}</label>
+        </li>
+        {{/each}}
+    </script>
+
+    <!-- Template for a candidate form multiple value section -->
+    <script id="candy-form-template" type="text/x-handlebars-template">
+        <div class="multipleVals" id={{lowercase}}>
+            <label for="{{lowercase}}0">{{capitalized}}:</label><br>
+            <input type="text" id="{{lowercase}}0" class="multipleInput" name="{{lowercase}}0">
+            <button id="new-{{lowercase}}" class="addBtn">Add {{lowercase}}</button>
+        </div>
+    </script>
+
+    <!-- Handlebar Template for the 1st resume template-->
+    <script id="temp1template" type="text/x-handlebars-template">
+        <div class="left-box">
+            <div class="section">
+                <div class="section-heading">Personal Info</div>
+                <div class="section-stuff">
+                    <p>{{address}}</p>
+                    <p>{{age}}</p>
+                
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-heading">Skills</div>
+                <div class="section-stuff">
+                    {{#each skills}}
+                        <div>{{this}}</div>
+                    {{/each}}
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-heading">Languages</div>
+                <div class="section-stuff"><p>French</p>
+                <p>German</p>
+                <p>Japanese</p></div>
+            </div>
+            
+            <div class="section">
+                <div class="section-heading">Contact</div>
+                <div class="section-stuff">
+                    <p>{{phone}}</p>
+                    <p>{{email}}</p>
+                    <p>{{linkedin}}</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="right-box">
+            <div class="heading-name">{{name}}</div>
+            <div class="template-designation">{{designation}}</div>
+            <p>
+                {{intro}}
+            </p>
+            <div class="section">
+                <div class="section-heading">Objective</div>
+                <div class="section-stuff">
+                    {{objective}}
+                </div>
+                <div class="section-heading">Experience</div>
+                <div class="section-stuff">
+                    {{#each experiences}}
+                        <div>{{this}}</div>
+                    {{/each}}
+                </div>
+                <div class="section-heading">Education</div>
+                <div class="section-stuff">
+                    {{#each education}}
+                        <div>{{this}}</div>
+                    {{/each}}
+                </div>
+                <div class="section-heading">Achievements</div>
+                <div class="section-stuff">
+                    {{#each achievements}}
+                        <div>{{this}}</div>
+                    {{/each}}
+                </div>
+            </div>
+            
+        </div>
+    </script>
+
+    <!-- Handlebar Template for the 2nd resume template-->
+    <script id="temp2template" type="text/x-handlebars-template">
+
+        <div class="temp2-template">
+            <div class="custom-shape-divider-top-1686457299 temp2-header">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+                </svg>
+                <div class="temp2-person-image">
+                    <img src="./static/person.jpg" alt="">
+
+                </div>
+                <h1>{{name}}</h1>
+                <h3>{{designation}}</h3>
+                <h5>{{email}}</h5>
+            </div>
+            <div class="temp2-content">
+                <div id="temp2-left-box">
+                    <div class="section">
+                        <div class="section-heading">
+                            Objective
+                        </div>
+                        <div class="section-stuff">
+                            {{objective}}
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-heading">
+                            Work Experience
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each experiences}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-heading">
+                            Education
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each education}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-heading">
+                            Contact
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                <li>{{phone}}</li>
+                                <li>{{email}}</li>
+                                <li>{{linkedin}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="temp2-right-box">
+                    <div class="section">
+                        <div class="section-heading">
+                            Skills
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each skills}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-heading">
+                            Achievements
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each achievements}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="section-heading">
+                            Certifications
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each certificates}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+    </script>
+
+    <!-- Handlebar Template for the 3rd resume template-->
+    <script id="temp3template" type="text/x-handlebars-template">
+
+        <div class="temp3-template">
+            <div class="header">
+                <h1>{{name}}</h1>
+                <h3>{{designation}}</h3>
+                
+                <div class="contact-section">
+                    <div>{{phone}}</div>
+                    <div>{{email}}</div>
+                    <div>{{address}}</div>
+                    <div>{{linkedin}}</div>
+                </div>
+                
+                <div class="separator"></div>
+            </div>
+
+            <div class="temp3-content">
+                <div class="section">
+                    <div class="section-heading" id="obj-heading">
+                        Objective
+                    </div>
+                    <div class="section-stuff">
+                        {{objective}}
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-heading">
+                        Experience
+                    </div>
+                    <div class="section-stuff">
+                        <ul>
+                            {{#each experiences}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-heading">
+                        Education
+                    </div>
+                    <div class="section-stuff">
+                        <ul>
+                            {{#each education}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="two-sections">                
+                    <div class="section">
+                        <div class="section-heading">
+                            Achievements
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each achievements}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section" id="skills-section">
+                        <div class="section-heading">
+                            Skills and Interests
+                        </div>
+                        <div class="section-stuff">
+                            <ul>
+                                {{#each skills}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="separator" id="sep2"></div>
+                
+
+            </div>
+            
+        </div>
+
+        
+    </script>
+
+</body>
+
+</html>

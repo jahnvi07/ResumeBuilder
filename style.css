@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#top-section>h1 {
+    margin-top: 2rem;
+}
+
+/* Logo */
+.main-container{
+    position: relative;
+}
+
+.logo{
+    position: fixed;
+    right: 12px;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.scale-in-top {
+    -webkit-animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-top {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-top {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+li {
+    list-style: none;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+#top-section,
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+button {
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: azure;
+}
+
+.sub-container {
+    width: 40rem;
+    margin-bottom: 2vw;
+}
+
+#details pre {
+    font-family: 'Pacifico', cursive;
+}
+
+#btns {
+    margin: 2vw 33%;
+}
+
+#btns button {
+    font-family: 'Pacifico', cursive;
+}
+
+.active {
+    display: block;
+}
+
+.unactive {
+    display: none;
+}
+
+.my-warning {
+    display: none;
+    color: red;
+}
+
+/* Candidate form section */
+
+#candidate-form form .upper-form {
+    display: flex;
+}
+
+#newCandySub {
+    margin: auto 48%;
+    font-size: 1.1rem;
+}
+
+
+.singleVal {
+    display: inline-block;
+    margin: 0 0 1rem 1rem;
+}
+
+input {
+    text-align: center;
+}
+
+.multipleVals {
+    margin: 0 0 1rem 1rem;
+}
+
+.multipleInput {
+    width: 26rem;
+    height: 2rem;
+    margin: 0.2rem 0.5rem;
+}
+
+.skills-input {
+    height: 1.5rem;
+    width: 13rem;
+}
+
+.addBtn,
+.skillAddBtn {
+    border-radius: 5px;
+    background-color: #F44336;
+    height: 32px;
+    margin: 0 0.5rem;
+    color: white;
+}
+
+.addBtn:hover,
+.skillAddBtn:hover {
+    cursor: pointer;
+    background-color: #ffdfdd;
+    color: #501b1b;
+}
+
+
+#download-resume{
+    margin-bottom: 6rem;
+}
+
+
+.resume ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.resume ul li label img{
+    display: block;
+    margin-top: 1rem;
+}
+
+.prev-img{
+    width: 100px;
+}
+
+/* General Resume Template */
+.resume-template {
+    font-family: 'Inter', sans-serif;
+    border: 2px solid black;
+    margin: 2rem 0;
+    width: 40rem;
+    height: 50rem;
+    display: none;
+
+}
+
+
+/* Resume Template 1*/
+.left-box {
+    background-color: rgb(121, 191, 230);
+    width: 30%;
+}
+
+.left-box .section-heading {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: rgb(49, 150, 181);
+}
+
+.left-box .section-stuff {
+    padding: 1rem;
+}
+
+.right-box {
+    background-color: rgb(217, 248, 261);
+    width: 70%;
+}
+
+.right-box .heading-name {
+    font-size: 2.5rem;
+    padding-left: 1rem;
+}
+
+.right-box .template-designation {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.right-box p,
+.right-box section {
+    padding: 1rem;
+}
+
+
+.right-box .section-heading {
+    font-weight: bolder;
+    color: #000073;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+}
+
+.right-box .section-stuff {
+    padding: 0.5rem 1rem;
+}
+
+
+
+/* Resume Template 2 */
+.custom-shape-divider-top-1686457299 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.custom-shape-divider-top-1686457299 svg {
+    position: relative;
+    display: block;
+    width: calc(205% + 1.3px);
+    height: 186px;
+}
+
+.custom-shape-divider-top-1686457299 .shape-fill {
+    fill: #183141;
+}
+
+.temp2-header h1 {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+}
+
+.temp2-header h3 {
+    position: absolute;
+    top: 62px;
+    right: 16px;
+    color: white;
+}
+
+.temp2-header h5 {
+    position: absolute;
+    top: 126px;
+    right: 16px;
+    color: white;
+}
+
+.temp2-template {
+    position: relative;
+}
+
+.temp2-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#temp2-right-box {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    padding: 12rem 1rem 1rem 1rem;
+}
+
+#temp2-left-box {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(197, 221, 242);
+    padding: 8rem 1rem 1rem 1rem;
+}
+
+.temp2-content .section-heading {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #183141;
+    margin: 2rem 0rem 0.5rem 0rem;
+}
+
+.temp2-content .section-stuff {
+    color: black;
+    margin: 0.5rem 0rem;
+}
+
+.temp2-person-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 5px solid white;
+    border-radius: 50%;
+    z-index: 100;
+    top: 19%;
+    left: 11%;
+}
+
+.temp2-person-image img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+
+/* Resume template 3 */
+
+.temp3-template {
+    width: 100%;
+}
+
+.temp3-template .header {
+    background: url("./static/svg1.svg") no-repeat center center;
+    height: 14%;
+    padding: 1rem;
+    position: relative;
+}
+
+.temp3-template .header h1,
+.temp3-content .section-heading {
+    color: #075383;
+    font-weight: 800;
+}
+
+.temp3-template .header h3 {
+    text-align: left;
+}
+
+.temp3-template .contact-section {
+    width: max-content;
+    text-align: right;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.temp3-content {
+    padding: 1rem;
+}
+
+.temp3-content .section {
+    margin-top: 1.4rem;
+}
+
+.temp3-content .section-heading {
+    font-size: 1.3rem;
+}
+
+.temp3-content .section-stuff {
+    margin-top: 0.4rem;
+}
+
+.temp3-content .two-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.temp3-content #skills-section {
+    padding-right: 6rem;
+}
+
+.temp3-template .separator {
+    width: 100%;
+    border: 3px solid #7a7a7a;
+    margin: 1rem 0rem;
+}
+
+.temp3-template #sep2 {
+    margin-top: 13rem;
+}
+
+
+/* Get PDf button */
+#getPDF {
+    display: none;
+    background-color: red;
+    color: white;
+    margin: 2vw auto;
+    transition: all 500ms;
+}
+
+#getPDF:hover {
+    box-shadow: 0px 3px 35px rgba(0, 0, 0, 0.5),106px 0px 0px 0px #ef9c9c inset, -106px 0 0 0 #ef9c9c inset;
+}
+
+
+/* To remove metaadata */
+@page {
+    size: auto;
+    margin: 5mm;
+}
+
+
+/* To show background colors in print preview */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

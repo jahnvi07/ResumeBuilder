@@ -1,0 +1,44 @@
+{
+    "candidates": [
+        
+        {
+            "id": 7,
+            "name": "Anush (Sample Candidate)",
+            "age": "21",
+            "intro": "Hello, My name you can see on the top. I aspire to be an astronaut.",
+            "objective": "I wanna make your company the world's best trading firm.",
+            "qualification": "B.Pharma",
+            "designation": "Dentist",
+            "address": "House No. 238, Planet Earth",
+            "phone": "987654321-",
+            "email": "anemail@gmail.com",
+            "linkedin": "https://linkedin.com/anush",
+            "skills": [
+                "Teeth Removing",
+                "Cavity Repairing",
+                "Talkative",
+                "HueHueHue"
+            ],
+            "experiences": [
+                "Broken 5 teeths oyy hoyy oyy hoyy",
+                "Fixed 3 out of those 5 oyy hoyy oyy hoyy",
+                "Rest two destroyed oyy hoyy oyy hoyy"
+            ],
+            "achievements": [
+                "Best Neurologist 2031",
+                "Best Pharmacist 2032",
+                "Best Surgeon 2033"
+            ],
+            "education": [
+                "!0th - Almost Failed",
+                "12th - 103%",
+                "Topped in University"
+            ],
+            "certificates": [
+                "Certified Lazy Person",
+                "certified Adorable Person",
+                "Certified Idiot"
+            ]
+        }
+    ]
+}
